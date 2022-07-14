@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 1000px;
+        background: url(https://img.lovepik.com/photo/40005/2858.jpg_wh300.jpg)
+          no-repeat center center / cover;
+        /* animation: body 4s linear infinite; */
+        position: absolute;
+      }
+
+      @keyframes body {
+        0% {
+          left: 0;
+        }
+        100% {
+          left: 500px;
+        }
+      }
+      .wrap {
+        width: 700px;
+        margin: auto;
+        padding-top: 10px;
+      }
+
+      .top {
+        width: 400px;
+        height: 100px;
+        background: red;
+        margin: auto;
+      }
+
+      .bottom {
+        width: 100%;
+        height: 150px;
+        background: black;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+      }
+
+      .bottom .box {
+        transform: rotate(0deg) translateY(50px);
+      }
+
+      .bottom .box img {
+        width: 100px;
+        background: white;
+        border-radius: 50%;
+        padding: 5px;
+        margin-top: 50px;
+      }
+
+      .footer {
+        width: 200px;
+        margin: auto;
+        margin-top: 50px;
+      }
+
+      .footer ul {
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        cursor: pointer;
+      }
+
+      .footer ul li {
+        font-size: 25px;
+        font-family: monospace;
+        font-weight: 700;
+        background: black;
+        color: white;
+        border-radius: 50%;
+        padding: 5px;
+      }
+
+      .active {
+        animation: dav 4s linear infinite;
+      }
+
+      .active1 {
+        animation: dav 2s linear infinite;
+      }
+
+      .active2 {
+        animation: dav 1s linear infinite;
+      }
+
+      .active3 {
+        animation: dav 0.1s linear infinite;
+      }
+
+      @keyframes dav {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(-360deg);
+        }
+      }
+      
+      .activediv {
+        animation: dav1 0.1s linear infinite;
+      }
+
+      .activediv1 {
+        animation: dav1 1s linear infinite;
+      }
+
+      .activediv2 {
+        animation: dav1 2s linear infinite;
+      }
+
+      .activediv3 {
+        animation: dav1 4s linear infinite;
+      }
+
+      @keyframes dav1 {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <div class="wrap">
+      <div class="top"></div>
+      <div class="bottom">
+        <div class="box">
+          <img
+            src="https://www.pngmart.com/files/15/Super-Car-Wheel-PNG-Photos.png"
+            alt="error img"
+          />
+        </div>
+        <div class="box">
+          <img
+            src="https://www.pngmart.com/files/15/Super-Car-Wheel-PNG-Photos.png"
+            alt="error img"
+          />
+        </div>
+      </div>
+      <div class="footer">
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>STOP</li>
+          <li>4</li>
+          <li>3</li>
+          <li>2</li>
+          <li>1</li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      let li = document.querySelectorAll("ul li");
+      let img = document.querySelectorAll(".bottom .box img");
+
+      for (let i = 0; i < li.length; i++) {
+        if (i == 0) {
+            li[i].addEventListener("mousemove", function () {
+            // alert('ceewvergve');
+            for (let x = 0; x < img.length; x++) {
+              img[x].classList.remove("active3");
+              img[x].classList.remove("active2");
+              img[x].classList.remove("active1");
+              img[x].classList.add("active");
+              img[x].classList.remove("activediv2");
+              img[x].classList.remove("activediv1");
+              img[x].classList.remove("activediv3");
+              img[x].classList.remove("activediv");
+            }
+          });
+        } else if (i == 1) {
+          li[i].addEventListener("mousemove", function () {
+            // alert('ceewvergve');
+            for (let x = 0; x < img.length; x++) {
+              img[x].classList.remove("active3");
+              img[x].classList.remove("active2");
+              img[x].classList.remove("active");
+              img[x].classList.add("active1");
+              img[x].classList.remove("activediv2");
+              img[x].classList.remove("activediv1");
+              img[x].classList.remove("activediv3");
+              img[x].classList.remove("activediv");
+            }
+          });
+        } else if (i == 2) {
+          li[i].addEventListener("mousemove", function () {
+            // alert('ceewvergve');
+            for (let x = 0; x < img.length; x++) {
+              img[x].classList.remove("active3");
+              img[x].classList.remove("active");
+              img[x].classList.remove("active1");
+              img[x].classList.add("active2");
+              img[x].classList.remove("activediv2");
+              img[x].classList.remove("activediv1");
+              img[x].classList.remove("activediv3");
+              img[x].classList.remove("activediv");
+            }
+          });
+        } else if (i == 3) {
+          li[i].addEventListener("mousemove", function () {
+            // alert('ceewvergve');
+            for (let x = 0; x < img.length; x++) {
+              img[x].classList.add("active3");
+              img[x].classList.remove("activediv2");
+              img[x].classList.remove("activediv1");
+              img[x].classList.remove("activediv3");
+              img[x].classList.remove("activediv");
+            }
+          });
+        } else if (i == 4) {
+          li[i].addEventListener("mousemove", function () {
+            // alert('ceewvergve');
+            for (let x = 0; x < img.length; x++) {
+              img[x].classList.remove("active3");
+              img[x].classList.remove("active2");
+              img[x].classList.remove("active1");
+              img[x].classList.remove("active");
+              img[x].classList.remove("activediv2");
+              img[x].classList.remove("activediv1");
+              img[x].classList.remove("activediv3");
+              img[x].classList.remove("activediv");
+            }
+          });
+        }else if (i == 5) {
+          li[i].addEventListener("mousemove", function () {
+            // alert('ceewvergve');
+            for (let x = 0; x < img.length; x++) {
+              img[x].classList.remove("activediv2");
+              img[x].classList.remove("activediv1");
+              img[x].classList.remove("activediv3");
+              img[x].classList.add("activediv");
+            }
+          });
+        }else if (i == 6) {
+          li[i].addEventListener("mousemove", function () {
+            // alert('ceewvergve');
+            for (let x = 0; x < img.length; x++) {
+              img[x].classList.remove("activediv2");
+              img[x].classList.add("activediv1");
+              img[x].classList.remove("activediv3");
+              img[x].classList.remove("activediv");
+            }
+          });
+        }else if (i == 7) {
+          li[i].addEventListener("mousemove", function () {
+            // alert('ceewvergve');
+            for (let x = 0; x < img.length; x++) {
+              img[x].classList.add("activediv2");
+              img[x].classList.remove("activediv1");
+              img[x].classList.remove("activediv3");
+              img[x].classList.remove("activediv");
+            }
+          });
+        }else if (i == 7) {
+          li[i].addEventListener("mousemove", function () {
+            // alert('ceewvergve');
+            for (let x = 0; x < img.length; x++) {
+              img[x].classList.remove("activediv2");
+              img[x].classList.remove("activediv1");
+              img[x].classList.add("activediv3");
+              img[x].classList.remove("activediv");
+            }
+          });
+        }else if (i == 8) {
+          li[i].addEventListener("mousemove", function () {
+            // alert('ceewvergve');
+            for (let x = 0; x < img.length; x++) {
+              img[x].classList.remove("activediv2");
+              img[x].classList.remove("activediv1");
+              img[x].classList.add("activediv3");
+              img[x].classList.remove("activediv");
+            }
+          });
+        }
+      }
+    </script>
+  </body>
+</html>
